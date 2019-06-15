@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from sign import views
 
 urlpatterns = [
+    path(r'^', views.index),
+    path(r'^index/', views.index),
+    path(r'accounts/login/', views.index),
     path('admin/', admin.site.urls),
+    # 添加index/路径配置
+    path('index/', views.index),
+    path('login_action/', views.login_action),
+    path('event_manage/', views.event_manage),
 ]
