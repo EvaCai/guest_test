@@ -26,4 +26,13 @@ urlpatterns = [
     path('index/', views.index),
     path('login_action/', views.login_action),
     path('event_manage/', views.event_manage),
+    path('search_name/', views.search_name),
+    path('guest_manage/', views.guest_manage),
+    path('search_guest/', views.search_guest),
+    # path(r'sign_index/(?P<eid>[0-9]+)/$', views.sign_index),
+    # path('sign_index/1/', views.sign_index),
+    path('sign_index/<int:eid>/', views.sign_index),
+    # path(r'sign_index_action/(?P<eid>[0-9]+)/$', views.sign_index_action)
+    path('sign_index_action/<int:eid>/', views.sign_index_action),
+    path('logout/', views.logout),
 ]
