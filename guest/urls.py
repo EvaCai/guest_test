@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from sign import views
+from sign import views, view_if_sec
+from django.conf.urls import url, include
 
 urlpatterns = [
-    path(r'^', views.index),
-    path(r'^index/', views.index),
-    path(r'accounts/login/', views.index),
+    path('', views.index),
+    path('index/', views.index),
+    path('accounts/login/', views.index),
     path('admin/', admin.site.urls),
     # 添加index/路径配置
     path('index/', views.index),
@@ -35,4 +36,5 @@ urlpatterns = [
     # path(r'sign_index_action/(?P<eid>[0-9]+)/$', views.sign_index_action)
     path('sign_index_action/<int:eid>/', views.sign_index_action),
     path('logout/', views.logout),
+    path('api/', include('sign.urls')),
 ]

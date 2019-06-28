@@ -13,6 +13,7 @@ def index(request):
     # username = request.get()
     return render(request, 'index.html')
 
+
 # 登录管理
 def login_action(request):
     username = request.POST.get('username', '')

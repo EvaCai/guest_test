@@ -54,6 +54,7 @@
                     </tr>
                 </thead>
                 <tbody>
+{#                    {% for d in data %}#}
                     {% for event in events %}
                     <tr>
                         <td>{{ event.id }}</td>
@@ -62,7 +63,7 @@
                         <td>{{ event.address }}</td>
                         <td>{{ event.start_time }}</td>
                         <td>
-                            <a href="/sign_index/{{ event.id }}/" target="{{ event.id }}_blank">sign</a>
+                            <a href="/sign_index/{{ event.eid }}/" target="{{ event.eid }}_blank">sign</a>
                         </td>
                     </tr>
                     {% endfor %}
